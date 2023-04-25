@@ -8,7 +8,7 @@ import { AssetPriceDetails } from 'nft/components/details/AssetPriceDetails'
 import { NftDetails } from 'nft/components/details/NftDetails'
 import { useParams } from 'react-router-dom'
 import styled from 'styled-components/macro'
-
+//ceshi
 const AssetContainer = styled.div`
   display: flex;
   width: 100%;
