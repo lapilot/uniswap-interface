@@ -11,6 +11,7 @@ export const FEE_AMOUNT_DETAIL: Record<
     label: '0.01',
     description: <Trans>Best for very stable pairs.</Trans>,
     supportedChains: [
+      SupportedChainId.PILOT_TESTNET,
       SupportedChainId.ARBITRUM_ONE,
       SupportedChainId.BNB,
       SupportedChainId.CELO,

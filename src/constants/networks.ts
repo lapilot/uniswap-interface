@@ -28,6 +28,10 @@ export const FALLBACK_URLS = {
     'https://rpc.ankr.com/eth',
     'https://eth-mainnet.public.blastapi.io',
   ],
+  [SupportedChainId.PILOT_TESTNET]: [
+    // "Safe" URLs
+    'https://rpc-test-a.pilotscan.org/',
+  ],
   [SupportedChainId.GOERLI]: [
     // "Safe" URLs
     'https://rpc.goerli.mudit.blog/',
@@ -99,6 +103,10 @@ export const RPC_URLS = {
   [SupportedChainId.MAINNET]: [
     `https://mainnet.infura.io/v3/${INFURA_KEY}`,
     ...FALLBACK_URLS[SupportedChainId.MAINNET],
+  ],
+  [SupportedChainId.PILOT_TESTNET]: [
+    `https://rpc-test-a.pilotscan.org/`,
+    ...FALLBACK_URLS[SupportedChainId.PILOT_TESTNET],
   ],
   [SupportedChainId.GOERLI]: [`https://goerli.infura.io/v3/${INFURA_KEY}`, ...FALLBACK_URLS[SupportedChainId.GOERLI]],
   [SupportedChainId.OPTIMISM]: [

@@ -50,6 +50,8 @@ import {
   WETH_POLYGON,
   WETH_POLYGON_MUMBAI,
   WRAPPED_NATIVE_CURRENCY,
+  AAA_PT,
+  BBB_PT,
 } from './tokens'
 
 type ChainTokenList = {
@@ -76,6 +78,7 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     USDT,
     WBTC,
   ],
+  [SupportedChainId.PILOT_TESTNET]: [AAA_PT, BBB_PT],
   [SupportedChainId.OPTIMISM]: [
     ...WRAPPED_NATIVE_CURRENCIES_ONLY[SupportedChainId.OPTIMISM],
     DAI_OPTIMISM,
@@ -142,6 +145,12 @@ export const COMMON_BASES: ChainCurrencyList = {
     WBTC,
     WRAPPED_NATIVE_CURRENCY[SupportedChainId.MAINNET] as Token,
   ],
+  [SupportedChainId.PILOT_TESTNET]: [
+    nativeOnChain(SupportedChainId.PILOT_TESTNET),
+    WRAPPED_NATIVE_CURRENCY[SupportedChainId.PILOT_TESTNET] as Token,
+    AAA_PT,
+    BBB_PT,
+  ],
   [SupportedChainId.GOERLI]: [
     nativeOnChain(SupportedChainId.GOERLI),
     WRAPPED_NATIVE_CURRENCY[SupportedChainId.GOERLI] as Token,
@@ -206,7 +215,7 @@ export const COMMON_BASES: ChainCurrencyList = {
   ],
 }
 
-// used to construct the list of all pairs we consider by default in the frontend
+// 用于构建我们在前端默认考虑的所有对的列表
 export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   ...WRAPPED_NATIVE_CURRENCIES_ONLY,
   [SupportedChainId.MAINNET]: [

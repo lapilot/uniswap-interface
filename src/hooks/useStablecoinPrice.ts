@@ -8,8 +8,8 @@ import { useRoutingAPITrade } from 'state/routing/useRoutingAPITrade'
 
 import { CUSD_CELO, DAI_OPTIMISM, USDC_ARBITRUM, USDC_MAINNET, USDC_POLYGON, USDT_BSC } from '../constants/tokens'
 
-// Stablecoin amounts used when calculating spot price for a given currency.
-// The amount is large enough to filter low liquidity pairs.
+// 计算给定货币的现货价格时使用的稳定币数量。
+// 数量足够大，可以过滤低流动性对。
 const STABLECOIN_AMOUNT_OUT: { [chainId: number]: CurrencyAmount<Token> } = {
   [SupportedChainId.MAINNET]: CurrencyAmount.fromRawAmount(USDC_MAINNET, 100_000e6),
   [SupportedChainId.ARBITRUM_ONE]: CurrencyAmount.fromRawAmount(USDC_ARBITRUM, 10_000e6),
@@ -17,6 +17,7 @@ const STABLECOIN_AMOUNT_OUT: { [chainId: number]: CurrencyAmount<Token> } = {
   [SupportedChainId.POLYGON]: CurrencyAmount.fromRawAmount(USDC_POLYGON, 10_000e6),
   [SupportedChainId.CELO]: CurrencyAmount.fromRawAmount(CUSD_CELO, 10_000e18),
   [SupportedChainId.BNB]: CurrencyAmount.fromRawAmount(USDT_BSC, 100e18),
+  [SupportedChainId.PILOT_TESTNET]: CurrencyAmount.fromRawAmount(USDC_POLYGON, 100e18),
 }
 
 /**

@@ -58,6 +58,7 @@ export function isPricePoint(p: PricePoint | null): p is PricePoint {
 
 export const CHAIN_ID_TO_BACKEND_NAME: { [key: number]: Chain } = {
   [SupportedChainId.MAINNET]: Chain.Ethereum,
+  [SupportedChainId.PILOT_TESTNET]: Chain.PilotTestnet,
   [SupportedChainId.GOERLI]: Chain.EthereumGoerli,
   [SupportedChainId.POLYGON]: Chain.Polygon,
   [SupportedChainId.POLYGON_MUMBAI]: Chain.Polygon,
@@ -78,6 +79,7 @@ export function chainIdToBackendName(chainId: number | undefined) {
 
 const GQL_CHAINS: number[] = [
   SupportedChainId.MAINNET,
+  SupportedChainId.PILOT_TESTNET,
   SupportedChainId.OPTIMISM,
   SupportedChainId.POLYGON,
   SupportedChainId.ARBITRUM_ONE,
@@ -107,6 +109,7 @@ export function gqlToCurrency(token: {
 
 const URL_CHAIN_PARAM_TO_BACKEND: { [key: string]: Chain } = {
   ethereum: Chain.Ethereum,
+  pilot: Chain.PilotTestnet,
   polygon: Chain.Polygon,
   celo: Chain.Celo,
   arbitrum: Chain.Arbitrum,
@@ -121,6 +124,7 @@ export function validateUrlChainParam(chainName: string | undefined) {
 // TODO(cartcrom): refactor into safer lookup & replace usage
 export const CHAIN_NAME_TO_CHAIN_ID: { [key in Chain]: SupportedChainId } = {
   [Chain.Ethereum]: SupportedChainId.MAINNET,
+  [Chain.PilotTestnet]: SupportedChainId.PILOT_TESTNET,
   [Chain.EthereumGoerli]: SupportedChainId.GOERLI,
   [Chain.Polygon]: SupportedChainId.POLYGON,
   [Chain.Celo]: SupportedChainId.CELO,

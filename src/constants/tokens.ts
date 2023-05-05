@@ -352,6 +352,20 @@ export const BUSD_BSC = new Token(
   'BUSD'
 )
 
+export const AAA_PT = new Token(
+  SupportedChainId.PILOT_TESTNET,
+  '0x5e76014c3aD540345Ff98255F566f47e7676e0C8',
+  6,
+  'AAA',
+  'AAA'
+)
+export const BBB_PT = new Token(
+  SupportedChainId.PILOT_TESTNET,
+  '0x556e20Bbc2e7625341B915dA22E93456FF41768D',
+  6,
+  'BBB',
+  'BBB'
+)
 export const DAI_BSC = new Token(SupportedChainId.BNB, '0x1AF3F329e8BE154074D8769D1FFa4eE058B1DBc3', 18, 'DAI', 'DAI')
 
 export const UNI: { [chainId: number]: Token } = {
@@ -361,6 +375,13 @@ export const UNI: { [chainId: number]: Token } = {
 
 export const WRAPPED_NATIVE_CURRENCY: { [chainId: number]: Token | undefined } = {
   ...(WETH9 as Record<SupportedChainId, Token>),
+  [SupportedChainId.PILOT_TESTNET]: new Token(
+    SupportedChainId.PILOT_TESTNET,
+    '0x8Cd36ceB1F214A213387889073B5f0267bdE1b43',
+    18,
+    'WPILOT',
+    'Wrapped PILOT'
+  ),
   [SupportedChainId.OPTIMISM]: new Token(
     SupportedChainId.OPTIMISM,
     '0x4200000000000000000000000000000000000006',

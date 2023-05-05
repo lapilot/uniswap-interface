@@ -43,6 +43,7 @@ const MAX_UINT128 = BigNumber.from(2).pow(128).sub(1)
 
 const DEFAULT_CHAINS = [
   SupportedChainId.MAINNET,
+  SupportedChainId.PILOT_TESTNET,
   SupportedChainId.ARBITRUM_ONE,
   SupportedChainId.OPTIMISM,
   SupportedChainId.POLYGON,

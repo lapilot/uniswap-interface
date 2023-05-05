@@ -1,6 +1,7 @@
 import bnbCircleLogoUrl from 'assets/images/bnbCircle.svg'
 import celoCircleLogoUrl from 'assets/images/celoCircle.png'
 import ethereumLogoUrl from 'assets/images/ethereum-logo.png'
+import pilotLogoUrl from 'assets/images/ethereum-logo.png'
 import polygonCircleLogoUrl from 'assets/images/polygonCircle.png'
 import { default as arbitrumCircleLogoUrl, default as arbitrumLogoUrl } from 'assets/svg/arbitrum_logo.svg'
 import bnbSquareLogoUrl from 'assets/svg/bnb_square_logo.svg'
@@ -71,6 +72,16 @@ const CHAIN_INFO: ChainInfoMap = {
     logoUrl: ethereumLogoUrl,
     nativeCurrency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
     color: darkTheme.chain_1,
+  },
+  [SupportedChainId.PILOT_TESTNET]: {
+    networkType: NetworkType.L1,
+    docs: 'https://docs.uniswap.org/',
+    explorer: 'https://testnet.pilotscan.org/',
+    infoLink: 'https://info.uniswap.org/#/',
+    label: 'Pilot testnet',
+    logoUrl: pilotLogoUrl,
+    nativeCurrency: { name: 'Pilot', symbol: 'PILOT', decimals: 18 },
+    color: darkTheme.chain_5,
   },
   [SupportedChainId.GOERLI]: {
     networkType: NetworkType.L1,

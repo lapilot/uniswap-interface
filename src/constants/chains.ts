@@ -8,6 +8,8 @@
  */
 export enum SupportedChainId {
   MAINNET = 1,
+  // PILOT_MAINNET = 1023,
+  PILOT_TESTNET = 2047,
   GOERLI = 5,
 
   ARBITRUM_ONE = 42161,
@@ -27,6 +29,8 @@ export enum SupportedChainId {
 
 export const CHAIN_IDS_TO_NAMES = {
   [SupportedChainId.MAINNET]: 'mainnet',
+  // [SupportedChainId.PILOT_MAINNET]: 'pilot_mainnet',
+  [SupportedChainId.PILOT_TESTNET]: 'pilot_testnet',
   [SupportedChainId.GOERLI]: 'goerli',
   [SupportedChainId.POLYGON]: 'polygon',
   [SupportedChainId.POLYGON_MUMBAI]: 'polygon_mumbai',
@@ -52,6 +56,7 @@ export function isSupportedChain(chainId: number | null | undefined): chainId is
 
 export const SUPPORTED_GAS_ESTIMATE_CHAIN_IDS = [
   SupportedChainId.MAINNET,
+  SupportedChainId.PILOT_TESTNET,
   SupportedChainId.POLYGON,
   SupportedChainId.CELO,
   SupportedChainId.OPTIMISM,
@@ -63,6 +68,7 @@ export const SUPPORTED_GAS_ESTIMATE_CHAIN_IDS = [
  * Unsupported networks for V2 pool behavior.
  */
 export const UNSUPPORTED_V2POOL_CHAIN_IDS = [
+  SupportedChainId.MAINNET,
   SupportedChainId.POLYGON,
   SupportedChainId.OPTIMISM,
   SupportedChainId.ARBITRUM_ONE,
@@ -71,6 +77,7 @@ export const UNSUPPORTED_V2POOL_CHAIN_IDS = [
 ] as const
 
 export const TESTNET_CHAIN_IDS = [
+  SupportedChainId.PILOT_TESTNET,
   SupportedChainId.GOERLI,
   SupportedChainId.POLYGON_MUMBAI,
   SupportedChainId.ARBITRUM_GOERLI,
@@ -84,6 +91,7 @@ export type SupportedTestnetChainId = typeof TESTNET_CHAIN_IDS[number]
  */
 export const L1_CHAIN_IDS = [
   SupportedChainId.MAINNET,
+  SupportedChainId.PILOT_TESTNET,
   SupportedChainId.GOERLI,
   SupportedChainId.POLYGON,
   SupportedChainId.POLYGON_MUMBAI,
