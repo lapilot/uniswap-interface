@@ -17,7 +17,6 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     },
     [setUserLocale]
   )
-
   return (
     <Provider locale={locale} forceRenderAfterLocaleChange={false} onActivate={onActivate}>
       {children}
